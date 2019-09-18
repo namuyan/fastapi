@@ -51,7 +51,7 @@ The key features are:
 
 ---
 
-"*I’m over the moon excited about **FastAPI**. It’s so fun!*"
+"*I'm over the moon excited about **FastAPI**. It's so fun!*"
 
 <div style="text-align: right; margin-right: 10%;">Brian Okken - <strong><a href="https://pythonbytes.fm/episodes/show/123/time-to-right-the-py-wrongs?time_in_sec=855" target="_blank">Python Bytes</a> podcast host</strong> <a href="https://twitter.com/brianokken/status/1112220079972728832" target="_blank"><small>(ref)</small></a></div>
 
