@@ -2,7 +2,6 @@ import re
 from dataclasses import is_dataclass
 from typing import Any, Dict, List, Sequence, Set, Type, cast
 
-from fastapi import routing
 from fastapi.openapi.constants import REF_PREFIX
 from pydantic import BaseConfig, BaseModel, Schema, create_model
 from pydantic.fields import Field
@@ -15,8 +14,9 @@ def get_flat_models_from_routes(routes: Sequence[BaseRoute]) -> Set[Type[BaseMod
     body_fields_from_routes: List[Field] = []
     responses_from_routes: List[Field] = []
     for route in routes:
+        from fastapi.routing import APIRoute
         if getattr(route, "include_in_schema", None) and isinstance(
-            route, routing.APIRoute
+            route, APIRoute
         ):
             if route.body_field:
                 assert isinstance(

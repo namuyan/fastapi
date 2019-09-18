@@ -1,6 +1,6 @@
 from typing import Any, Callable, Dict, List, Optional, Sequence, Type, Union
 
-from fastapi import routing
+from fastapi.routing import APIRouter
 from fastapi.encoders import DictIntStrAny, SetIntStr
 from fastapi.exception_handlers import (
     http_exception_handler,
@@ -39,7 +39,7 @@ class FastAPI(Starlette):
         **extra: Dict[str, Any],
     ) -> None:
         self._debug = debug
-        self.router: routing.APIRouter = routing.APIRouter(
+        self.router: APIRouter = APIRouter(
             routes, dependency_overrides_provider=self
         )
         self.exception_middleware = ExceptionMiddleware(self.router, debug=debug)
@@ -234,7 +234,7 @@ class FastAPI(Starlette):
 
     def include_router(
         self,
-        router: routing.APIRouter,
+        router: APIRouter,
         *,
         prefix: str = "",
         tags: List[str] = None,
